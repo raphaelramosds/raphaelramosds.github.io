@@ -255,16 +255,17 @@ function game() {
   fill(txtprimary)
   text("Colocar bloco", 300, 580)
 
-  fill("#1B9AAA")
+  stroke(1)
+  fill(btnprimary)
   rect(180, 547, 30, 40, 10)
   textSize(24)
-  fill(txtsecondary)
+  fill(txtprimary)
   text("+", 195, 573)
 
-  fill("#EF476F")
+  fill(btnprimary)
   rect(150, 547, 28, 40, 10)
   textSize(24)
-  fill(txtsecondary)
+  fill(txtprimary)
   text("-", 165, 573)
 
   fill(btnprimary)
