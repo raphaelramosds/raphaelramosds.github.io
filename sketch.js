@@ -473,8 +473,8 @@ function keyPressed() {
   if (key == 'Escape') {
 
     blocks = []
-    index = 0
-    mean = 0
+    index  = 0
+    mean   = 0
     median = 0
     spread = 0
 
@@ -502,9 +502,14 @@ function mouseClicked() {
     case 'game':
       
       if((mouseX > 430 && mouseX < 580) && (mouseY > 82 && mouseY < 150)){
-        updateChallenge()
+        mean   = 0
+        median = 0
+        spread = 0
         blocks = []
         index  = 0
+        
+        updateChallenge()
+        
       }
       
       if ((mouseX > 680 && mouseX < 780) && (mouseY > 550 && mouseY < 600) && helpPopup == false) {
