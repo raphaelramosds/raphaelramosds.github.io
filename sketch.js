@@ -503,6 +503,8 @@ function mouseClicked() {
       
       if((mouseX > 430 && mouseX < 580) && (mouseY > 82 && mouseY < 150)){
         updateChallenge()
+        blocks = []
+        index  = 0
       }
       
       if ((mouseX > 680 && mouseX < 780) && (mouseY > 550 && mouseY < 600) && helpPopup == false) {
