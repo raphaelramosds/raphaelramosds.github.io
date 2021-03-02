@@ -30,7 +30,12 @@ blocks        = []
 selectedBlock = null
 
 function preload() {
-
+  
+  soundFormats('mp3', 'wav');
+  putBlocks = loadSound('assets/sounds/putblocks.wav');
+  chalengecompleted = loadSound('assets/sounds/challengecompleted.mp3');
+  
+  
   // Images
 
   menuimage = loadImage("assets/img/menu.jpg")
@@ -216,11 +221,13 @@ function game() {
     break;
   
     default:
+       
       textSize(20)
       fill(txtprimary)
       noStroke()
       textSize(20)
       text("Parabens você cumpriu os desafios!", 592,60)
+      
       
       fill(btnprimary)
       stroke(25)
@@ -429,6 +436,7 @@ function checkChallenge(){
    else if(countChallenge = 2){
      if(median >= startMedianRange && median <= finalMedianRange){
        countChallenge++
+       chalengecompleted.play()
      }
    }
   
@@ -502,6 +510,9 @@ function mouseClicked() {
     case 'game':
       
       if((mouseX > 430 && mouseX < 580) && (mouseY > 82 && mouseY < 150)){
+        
+        chalengecompleted.stop()
+        
         mean   = 0
         median = 0
         spread = 0
@@ -538,7 +549,9 @@ function mouseClicked() {
 
       // Save blocks on array and show them
       if ((mouseX > 220 && mouseX < 390) && (mouseY > 550 && mouseY < 600)) {
-
+        
+        putBlocks.play()
+        
         // The system only shows 10 blocks
 
         if (blocks.length < 9) {
@@ -577,6 +590,8 @@ function mouseClicked() {
       for (i = 0; i < blocks.length; i++) {
         if ((mouseX > blocks[i].x && mouseX < blocks[i].x * 1.25) && (mouseY > blocks[i].y && mouseY < blocks[i].y * 2)) {
 
+          putBlocks.play()
+          
           selectedBlock = i
           blocks.splice(selectedBlock, 1)
 
