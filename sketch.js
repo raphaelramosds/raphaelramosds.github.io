@@ -505,7 +505,10 @@ function mouseClicked() {
       } else {
         creditsPopup = false
       }
-      break;
+      
+      if ((mouseX > 168 && mouseX < 350) && (mouseY > 250 && mouseY < 350) ) {
+        screen = 'game'
+      } 
 
     case 'game':
       
