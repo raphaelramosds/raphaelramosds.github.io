@@ -3,6 +3,13 @@ html, body {
   padding: 0;
 }
 canvas {
-  max-width: 1000px;
+  display:block;
+}
+
+content {
+  
+  padding: 10px;
   margin: auto;
+  max-width: 800px;
+  
 }
